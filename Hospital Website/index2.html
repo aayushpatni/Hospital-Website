@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("pass").value;
+
+            if (email === "" || password === "") {
+                alert("Please fill out all fields.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div id="contact">
+        <div class="head">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="contact">
+            <h1>Connect With Us</h1>
+            <form action="https://formspree.io/f/mgvwynva" method="POST" name="userForm" onsubmit="return validateForm()">
+                <input type="email" placeholder="Enter Email" id="email" name="email" required>
+                <input type="password" placeholder="Enter Password" id="pass" name="password" required>
+                <button id="connectBtn" name="connectBtn">Connect</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
